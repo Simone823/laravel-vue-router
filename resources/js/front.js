@@ -14,7 +14,12 @@ window.Vue = require('vue');
 // Import component app vue
 import App from './views/App.vue';
 
+// Import router
+import router from './router/index';
+
+// Creo una nuova istanza di vue
 const app = new Vue({
     el: '#root',
-    render: h => h(App)
+    render: h => h(App),
+    router,
 });
