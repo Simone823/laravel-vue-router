@@ -6,17 +6,23 @@
         <!-- Header nav -->
         <header class="py-8 px-4 mb-4">
             <nav class="nav-menu">
-                <ul class="flex items-center justify-center gap-8">
-                    <li>Home</li>
-                    <li>Posts</li>
-                    <li>Categories</li>
+                <ul class="flex items-center justify-center gap-8 uppercase">
+                    <li>
+                        <router-link to="/">Homepage</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/posts">Posts</router-link>
+                    </li>
+                    <li>
+                        <router-link to="">Categories</router-link>
+                    </li>
                 </ul>
             </nav>
         </header>
 
         <!-- Main -->
         <main class="container">
-            <PostsIndex/>
+            <router-view></router-view>
         </main>
     </div>
     
@@ -24,15 +30,8 @@
 
 
 <script>
-// Import posts index
-import PostsIndex from '../views/Posts.index.vue';
-
 export default {
-    components: {
-        PostsIndex,
-    },
-
-    name: 'App',    
+    name: 'App',
 }
 </script>
 
