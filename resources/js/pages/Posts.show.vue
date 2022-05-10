@@ -53,6 +53,9 @@
                 })
                 .catch( err => {
                     console.warn(err);
+
+                    // redirect page not found
+                    this.$router.push('/404');
                 })
             }
         },
