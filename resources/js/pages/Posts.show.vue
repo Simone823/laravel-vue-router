@@ -14,14 +14,14 @@
             <p v-if="post.category" class="category mb-5 text-yellow-500 text-base font-semibold">{{post.category.name}}</p>
 
             <!-- list Tags -->
-            <ul class="list_tags flex gap-5 items-center flex-wrap mb-8">
+            <ul v-if="post.tags" class="list_tags flex gap-5 items-center flex-wrap mb-8">
                 <li class="tag rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 py-1 px-4 font-semibold" v-for="tag in post.tags" :key="tag.id">
                     {{tag.name}}
                 </li>
             </ul>
 
             <!-- Desscription -->
-            <p class="description text-gray-300 leading-loose">{{post.description}}</p>
+            <p v-if="post.description" class="description text-gray-300 leading-loose">{{post.description}}</p>
         </div>
     </div>
 
