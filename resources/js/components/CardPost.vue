@@ -4,7 +4,7 @@
     <div class="card_post rounded-md overflow-hidden">
 
         <!-- Img wrapper -->
-        <figure class="img_wrapper_post w-full h-52">
+        <figure class="img_wrapper_post w-full h-52 overflow-hidden cursor-pointer">
             <router-link :to="{name: 'posts.show', params: {slug: arrayPosts.slug}}">
                 <img :src="arrayPosts.image" alt="" class="w-full object-cover">
             </router-link>
@@ -48,6 +48,18 @@
     box-shadow: 0px 8px 30px 4px rgba(0,0,0,0.84);
     -webkit-box-shadow: 0px 8px 30px 4px rgba(0,0,0,0.84);
     -moz-box-shadow: 0px 8px 30px 4px rgba(0,0,0,0.84);
+
+    .img_wrapper_post {
+
+        &:hover {
+           
+            img {
+                transform: scale(1.1);
+                opacity: 0.5;
+                transition: all 300ms linear;
+            }
+        }
+    }
 }
 
 </style>
