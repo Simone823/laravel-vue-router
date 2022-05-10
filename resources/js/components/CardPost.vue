@@ -5,7 +5,9 @@
 
         <!-- Img wrapper -->
         <figure class="img_wrapper_post w-full h-52">
-            <img :src="arrayPosts.image" alt="" class="w-full object-cover">
+            <router-link :to="{name: 'posts.show', params: {slug: arrayPosts.slug}}">
+                <img :src="arrayPosts.image" alt="" class="w-full object-cover">
+            </router-link>
         </figure>
 
         <!-- Description card -->
