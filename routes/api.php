@@ -21,7 +21,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // Rotta namespace Api
 Route::namespace('Api')->group( function () {
 
-    // Rotta Api Posts Post controller index
-    Route::get('/posts', 'PostController@index');
-
+    // Rotta resource Posts Post controller only index, show
+    Route::resource('/posts', 'PostController')->only([
+        'index',
+        'show'
+    ]);
+    
 });
