@@ -13,6 +13,9 @@ import PostsIndex from '../pages/Posts.index.vue';
 // Import posts show
 import PostsShow from '../pages/Posts.show.vue';
 
+// Import pages 404 not found
+import NotFoundPage from '../pages/404.vue';
+
 // Vue use vue router
 Vue.use(VueRouter);
 
@@ -42,6 +45,15 @@ const routes = [
         component: PostsShow,
         meta: {
             title: 'BOOLPRESS | LETTURA POST'
+        }
+    },
+
+    {
+        path: '/*',
+        name: '404',
+        component: NotFoundPage,
+        meta: {
+            title: '404 | PAGE NOT FOUND'
         }
     }
 ];
