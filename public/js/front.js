@@ -3770,7 +3770,7 @@ var render = function () {
               "h3",
               {
                 staticClass:
-                  "title mb-3 text-xl max-w-max hover:text-rose-600 transition-colors duration-300",
+                  "title mb-5 text-xl max-w-max hover:text-cyan-300 transition-colors duration-300",
               },
               [_vm._v(_vm._s(_vm.arrayPosts.title))]
             ),
@@ -3782,7 +3782,7 @@ var render = function () {
               "p",
               {
                 staticClass:
-                  "category mb-3 text-yellow-500 text-base font-semibold",
+                  "category rounded rounded-md bg-lime-400 text-black font-semibold max-w-max py-1 px-4 mb-5",
               },
               [_vm._v(_vm._s(_vm.arrayPosts.category.name))]
             )
@@ -3951,14 +3951,14 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("LayoutDefault", [
-    _c("section", { staticClass: "category_archive container  py-8 px-4" }, [
+    _c("section", { staticClass: "category_archive container py-8 px-4" }, [
       _c("div", { staticClass: "category_name text-center mb-16" }, [
         _vm.category
           ? _c(
               "h1",
               {
                 staticClass:
-                  "rounded rounded-md bg-green-700 py-1 px-2 max-w-max m-auto",
+                  "rounded rounded-md bg-lime-400 text-black font-semibold py-1 px-4 max-w-max m-auto",
               },
               [_vm._v(_vm._s(_vm.category.name))]
             )
@@ -4026,16 +4026,21 @@ var render = function () {
                         "h3",
                         {
                           staticClass:
-                            "title mb-3 text-xl max-w-max hover:text-rose-600 transition-colors duration-300",
+                            "title mb-5 text-xl max-w-max hover:text-cyan-300 transition-colors duration-300",
                         },
                         [_vm._v(_vm._s(element.title))]
                       ),
                     ]
                   ),
                   _vm._v(" "),
-                  _c("p", { staticClass: "description" }, [
-                    _vm._v(_vm._s(element.description)),
-                  ]),
+                  _c(
+                    "p",
+                    {
+                      staticClass:
+                        "description description text-gray-300 leading-loose",
+                    },
+                    [_vm._v(_vm._s(element.description))]
+                  ),
                 ],
                 1
               ),
@@ -4099,7 +4104,7 @@ var render = function () {
         "ul",
         {
           staticClass:
-            "list_categories flex items-center justify-center gap-4 mb-16 flex-wrap",
+            "list_categories flex items-center justify-center gap-6 mb-16 flex-wrap",
         },
         _vm._l(_vm.categoriesArray, function (category) {
           return _c(
@@ -4107,7 +4112,7 @@ var render = function () {
             {
               key: category.id,
               staticClass:
-                "rounded rounded-md bg-green-700 max-w-max py-1 px-2 cursor-pointer",
+                "rounded rounded-md bg-lime-400 hover:bg-amber-300 hover:-translate-y-1.5 duration-300 text-black font-semibold max-w-max py-1 px-4 cursor-pointer",
               attrs: {
                 tag: "li",
                 to: {
