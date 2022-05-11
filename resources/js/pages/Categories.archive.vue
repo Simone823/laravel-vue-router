@@ -4,11 +4,11 @@
     <LayoutDefault>
 
         <!-- Sezione category archive -->
-        <section class="category_archive container  py-8 px-4">
+        <section class="category_archive container py-8 px-4">
 
             <!-- Category name -->
             <div class="category_name text-center mb-16">
-                <h1 v-if="category" class="rounded rounded-md bg-green-700 py-1 px-2 max-w-max m-auto">{{category.name}}</h1>
+                <h1 v-if="category" class="rounded rounded-md bg-lime-400 text-black font-semibold py-1 px-4 max-w-max m-auto">{{category.name}}</h1>
             </div>
 
             <!-- Grid container posts cards wrapper -->
@@ -29,11 +29,11 @@
 
                         <!-- Title -->
                         <router-link :to="{name: 'posts.show', params: {slug: element.slug} }">
-                            <h3 class="title mb-3 text-xl max-w-max hover:text-rose-600 transition-colors duration-300">{{element.title}}</h3>
+                            <h3 class="title mb-5 text-xl max-w-max hover:text-cyan-300 transition-colors duration-300">{{element.title}}</h3>
                         </router-link>
 
                         <!-- Description -->
-                        <p class="description">{{element.description}}</p>
+                        <p class="description description text-gray-300 leading-loose">{{element.description}}</p>
                     </div>
 
                 </div>
