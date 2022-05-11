@@ -6,9 +6,9 @@
         <section class="posts_index container py-8 px-4">
 
             <!-- Lista categories -->
-            <ul class="list_categories flex items-center justify-center gap-4 mb-16 flex-wrap">
+            <ul class="list_categories flex items-center justify-center gap-6 mb-16 flex-wrap">
                 <router-link tag="li" :to="{name: 'categories.archive', params: {slug: category.slug}}" v-for="category in categoriesArray" :key="category.id" 
-                    class="rounded rounded-md bg-green-700 max-w-max py-1 px-2 cursor-pointer"
+                    class="rounded rounded-md bg-lime-400 hover:bg-amber-300 hover:-translate-y-1.5 duration-300 text-black font-semibold max-w-max py-1 px-4 cursor-pointer"
                 >
                     {{category.name}}
                 </router-link>
