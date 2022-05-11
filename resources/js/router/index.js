@@ -13,6 +13,9 @@ import PostsIndex from '../pages/Posts.index.vue';
 // Import posts show
 import PostsShow from '../pages/Posts.show.vue';
 
+// Import categories archive
+import CategoriesArchive from '../pages/Categories.archive.vue';
+
 // Import pages 404 not found
 import NotFoundPage from '../pages/404.vue';
 
@@ -45,6 +48,15 @@ const routes = [
         component: PostsShow,
         meta: {
             title: 'BOOLPRESS | LETTURA POST'
+        }
+    },
+
+    {
+        path: '/categories/:slug',
+        name: 'categories.archive',
+        component: CategoriesArchive,
+        meta: {
+            title: 'BOOLPRESS | CATEGORIA'
         }
     },
 
