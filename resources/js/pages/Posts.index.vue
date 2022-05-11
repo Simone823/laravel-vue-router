@@ -4,7 +4,16 @@
     <LayoutDefault>
         <!-- Section posts index -->
         <section class="posts_index container py-8 px-4">
-    
+
+            <!-- Lista categories -->
+            <ul class="list_categories flex items-center justify-center gap-4 mb-16 flex-wrap">
+                <router-link tag="li" :to="{name: 'categories.archive', params: {slug: category.slug}}" v-for="category in categoriesArray" :key="category.id" 
+                    class="rounded rounded-full bg-green-700 max-w-max py-1 px-2 cursor-pointer"
+                >
+                    {{category.name}}
+                </router-link>
+            </ul>
+
             <!-- Grid container posts cards wrapper -->
             <div class="posts_cards_wrapper grid grid-cols-1 md:grid-cols-3 lg:grid:cols-4 sm:grid-cols-2 gap-16 mb-16">
                 <!-- Componente card post -->
@@ -50,6 +59,11 @@ export default {
             // Array posts
             postsArray: [],
 
+            
+            // Array categories
+            categoriesArray: [],
+
+
             // Current page
             currentPage: 1,
 
@@ -92,12 +106,37 @@ export default {
             // Scroll to top 0px
             window.scrollTo({ top: 0, behavior: 'smooth' });
         },
+
+        
+        // Funzione chiamata server recupero categories
+        recuperoCategories: function() {
+            // Axios
+            Axios.get('/api/categories')
+            .then( res => {
+
+                // Recupero le categorie
+                const {categories} = res.data;
+
+                // Pusho i la risposta nell'array categories
+                this.categoriesArray = categories;
+            })
+            .catch( err => {
+                console.warn(err);
+            })
+
+            // Scroll to top 0px
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
     },
 
     mounted() {
 
         // Richiamo la funzione recuperoPosts
         this.recuperoPosts();
+
+        // Richiamo funzione recupero categories
+        this.recuperoCategories();
     }
 }
 </script>
