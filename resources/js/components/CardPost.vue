@@ -12,7 +12,9 @@
 
         <!-- Description card -->
         <div class="description_post p-5">
-            <h3 class="title mb-3 text-xl">{{arrayPosts.title}}</h3>
+            <router-link :to="{name: 'posts.show', params: {slug: arrayPosts.slug}}">
+                <h3 class="title mb-3 text-xl max-w-max hover:text-rose-600 transition-colors duration-300">{{arrayPosts.title}}</h3>
+            </router-link>
             <p v-if="arrayPosts.category" class="category mb-3 text-yellow-500 text-base font-semibold">{{arrayPosts.category.name}}</p>
 
             <!-- list Tags -->
