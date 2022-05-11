@@ -1,7 +1,7 @@
 <template>
 
     <!-- Container -->
-    <section class="container flex flex-col items-center justify-center gap-6 text-4xl">
+    <section class="container flex flex-col items-center justify-center gap-6 text-4xl bg-stone-800 text-white max-w-full h-full text-center">
 
         <!-- Error number -->
         <h1>404</h1>
