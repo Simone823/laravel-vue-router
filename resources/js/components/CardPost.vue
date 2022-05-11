@@ -13,9 +13,9 @@
         <!-- Description card -->
         <div class="description_post p-5">
             <router-link :to="{name: 'posts.show', params: {slug: arrayPosts.slug}}">
-                <h3 class="title mb-3 text-xl max-w-max hover:text-rose-600 transition-colors duration-300">{{arrayPosts.title}}</h3>
+                <h3 class="title mb-5 text-xl max-w-max hover:text-cyan-300 transition-colors duration-300">{{arrayPosts.title}}</h3>
             </router-link>
-            <p v-if="arrayPosts.category" class="category mb-3 text-yellow-500 text-base font-semibold">{{arrayPosts.category.name}}</p>
+            <p v-if="arrayPosts.category" class="category rounded rounded-md bg-lime-400 text-black font-semibold max-w-max py-1 px-4 mb-5">{{arrayPosts.category.name}}</p>
 
             <!-- list Tags -->
             <ul class="list_tags flex gap-5 items-center flex-wrap">
