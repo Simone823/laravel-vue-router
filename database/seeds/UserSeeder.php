@@ -27,7 +27,7 @@ class UserSeeder extends Seeder
 
             // Creo un  nuovo utente
             User::create([
-                'name' => $faker->name(),
+                'name' => $faker->userName(),
                 'email' => $faker->unique()->email(),
                 'password' => Hash::make($faker->password()),
             ]);
