@@ -55,10 +55,10 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show(Post $post)
     {
-        // Recupero il singolo post con la categoria e i tags
-        $post = Post::with('category', 'tags')->where('slug', $slug)->first();
+        // Carico il post con la categoria e i tags
+        $post->load(['category', 'tags']);
 
         // Controllo se esiste il post
         if($post) {
