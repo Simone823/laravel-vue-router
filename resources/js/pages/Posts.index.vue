@@ -8,7 +8,7 @@
             <!-- Lista categories -->
             <ul class="list_categories flex items-center justify-center gap-4 mb-16 flex-wrap">
                 <router-link tag="li" :to="{name: 'categories.archive', params: {slug: category.slug}}" v-for="category in categoriesArray" :key="category.id" 
-                    class="rounded rounded-full bg-green-700 max-w-max py-1 px-2 cursor-pointer"
+                    class="rounded rounded-md bg-green-700 max-w-max py-1 px-2 cursor-pointer"
                 >
                     {{category.name}}
                 </router-link>
