@@ -1,35 +1,45 @@
 <template>
 
-    <!-- Post card -->
-    <div v-if="post" class="card_post p-4">
+    <!-- extend layout.vue -->
+    <LayoutDefault>
+        <!-- Post card -->
+        <div v-if="post" class="card_post p-4">
 
-        <!-- Img wrapper -->
-        <figure class="img_wrapper_post w-full mb-3 shadow-2xl">
-            <img :src="post.image" alt="" class="w-full object-cover object-center">
-        </figure>
+            <!-- Img wrapper -->
+            <figure class="img_wrapper_post w-full mb-3 shadow-2xl">
+                <img :src="post.image" alt="" class="w-full object-cover object-center">
+            </figure>
 
-        <!-- Description card -->
-        <div class="description_post py-8 px-5 container">
-            <h3 class="title mb-5 text-2xl">{{post.title}}</h3>
-            <p v-if="post.category" class="category mb-5 text-yellow-500 text-base font-semibold">{{post.category.name}}</p>
+            <!-- Description card -->
+            <div class="description_post py-8 px-5 container">
+                <h3 class="title mb-5 text-2xl">{{post.title}}</h3>
+                <p v-if="post.category" class="category mb-5 text-yellow-500 text-base font-semibold">{{post.category.name}}</p>
 
-            <!-- list Tags -->
-            <ul v-if="post.tags" class="list_tags flex gap-5 items-center flex-wrap mb-8">
-                <li class="tag rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 py-1 px-4 font-semibold" v-for="tag in post.tags" :key="tag.id">
-                    {{tag.name}}
-                </li>
-            </ul>
+                <!-- list Tags -->
+                <ul v-if="post.tags" class="list_tags flex gap-5 items-center flex-wrap mb-8">
+                    <li class="tag rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 py-1 px-4 font-semibold" v-for="tag in post.tags" :key="tag.id">
+                        {{tag.name}}
+                    </li>
+                </ul>
 
-            <!-- Desscription -->
-            <p v-if="post.description" class="description text-gray-300 leading-loose">{{post.description}}</p>
+                <!-- Desscription -->
+                <p v-if="post.description" class="description text-gray-300 leading-loose">{{post.description}}</p>
+            </div>
         </div>
-    </div>
+    </LayoutDefault>
 
 </template>
 
 <script>
+// Import layout default
+import LayoutDefault from '../layouts/layout.vue';
+
     export default {
         name: 'PostsShow',
+
+        components: {
+            LayoutDefault,
+        },
 
         data() {
             return {
