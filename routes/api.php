@@ -25,6 +25,14 @@ Route::namespace('Api')->group( function () {
     Route::resource('/posts', 'PostController')->only([
         'index',
         'show'
+    ])->parameters([
+        'posts' => 'post:slug'
     ]);
+
+    // Rotta categories index
+    Route::get('/categories', 'CategoryController@index');
+
+    // Rotta categories category posts archive
+    Route::get('/categories/{category}/posts', 'CategoryController@archive');
     
 });
