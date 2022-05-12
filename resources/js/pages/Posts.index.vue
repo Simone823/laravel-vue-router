@@ -8,6 +8,13 @@
             <!-- Categories wrapper -->
             <div class="categories_wrapper">
 
+                <!-- Title -->
+                <div class="title">
+                    <h2 class="uppercase text-lg font-bold tracking-wider text-center mb-6">
+                        Categorie
+                    </h2>
+                </div>
+
                 <!-- Lista categories -->
                 <ul class="list_categories flex items-center justify-center gap-6 mb-16 flex-wrap">
                     <router-link tag="li" :to="{name: 'categories.archive', params: {slug: category.slug}}" v-for="category in categoriesArray" :key="category.id" 
@@ -28,6 +35,13 @@
             <!-- Tags wrapper -->
             <div class="tags_wrapper">
 
+                <!-- Title -->
+                <div class="title">
+                    <h2 class="uppercase text-lg font-bold tracking-wider text-center mb-6">
+                        &#35;Tags
+                    </h2>
+                </div>
+
                 <!-- Lista tags -->
                 <ul class="list_tags flex items-center justify-center gap-6 mb-16 flex-wrap">
                     <router-link tag="li" :to="{name: 'tags.archive', params: {slug: tag.slug}}" v-for="tag in arrayTags" :key="tag.id" 
@@ -44,10 +58,21 @@
                 </ul>
             </div>
 
-            <!-- Grid container posts cards wrapper -->
-            <div class="posts_cards_wrapper grid grid-cols-1 md:grid-cols-3 lg:grid:cols-4 sm:grid-cols-2 gap-16 mb-16">
-                <!-- Componente card post -->
-                <PostCard v-for="element in postsArray" :key="element.id" :arrayPosts="element"/>
+            <!-- Wrapper post -->
+            <div class="wrapper_posts">
+
+                <!-- Title -->
+                    <div class="title">
+                        <h2 class="uppercase text-lg font-bold tracking-wider text-center mb-6">
+                            Post Pubblicati
+                        </h2>
+                    </div>
+
+                <!-- Grid container posts cards wrapper -->
+                <div class="posts_cards_wrapper grid grid-cols-1 md:grid-cols-3 lg:grid:cols-4 sm:grid-cols-2 gap-16 mb-16">
+                    <!-- Componente card post -->
+                    <PostCard v-for="element in postsArray" :key="element.id" :arrayPosts="element"/>
+                </div>
             </div>
     
             <!-- Pages -->
@@ -191,7 +216,46 @@ export default {
 
 <style lang="scss" scoped>
 
+.categories_wrapper {
+
+    .title {
+        position: relative;
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 100%;
+            transform: translateY(8px);
+            background-color: #aaa;
+            height: 1px;
+            border-radius: 999px;
+            opacity: 0.2;
+        }
+    }
+}
+
 .tags_wrapper {
+
+    .title {
+        position: relative;
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 100%;
+            transform: translateY(8px);
+            background-color: #aaa;
+            height: 1px;
+            border-radius: 999px;
+            opacity: 0.2;
+        }
+    }
 
     .list_tags {
 
@@ -202,6 +266,27 @@ export default {
                 display: inline-block;
                 font-weight: 600;
             }
+        }
+    }
+}
+
+.wrapper_posts {
+
+    .title {
+        position: relative;
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 100%;
+            transform: translateY(8px);
+            background-color: #aaa;
+            height: 1px;
+            border-radius: 999px;
+            opacity: 0.2;
         }
     }
 }
