@@ -6,6 +6,14 @@
         <!-- Sezione tags archive -->
         <section class="tags_archive container py-8 px-4">
 
+            <!-- Title -->
+            <div class="section_title">
+                <h2 class="uppercase text-lg font-bold tracking-wider mb-6 flex items-center justify-center gap-2">
+                    <img :src="require('/public/img/tag_icon.svg')" class="h-5 w-5 invert" alt="">
+                    Tag
+                </h2>
+            </div>
+
             <!-- Tag name -->
             <div class="tag_name text-center mb-16">
                 <h1 v-if="tag" class="tag rounded rounded-lg bg-color-blue-1 text-black shadow-md shadow-color-blue-1/50 py-1 px-4 font-semibold mx-auto max-w-max flex items-center gap-1">
@@ -101,5 +109,26 @@ import LayoutDefault from '../layouts/layout.vue';
 </script>
 
 <style lang="scss" scoped>
+
+.tags_archive {
+
+    .section_title {
+        position: relative;
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 100%;
+            transform: translateY(8px);
+            background-color: #aaa;
+            height: 1px;
+            border-radius: 999px;
+            opacity: 0.2;
+        }
+    }
+}
 
 </style>
