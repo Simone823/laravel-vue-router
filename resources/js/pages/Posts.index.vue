@@ -191,4 +191,19 @@ export default {
 
 <style lang="scss" scoped>
 
+.tags_wrapper {
+
+    .list_tags {
+
+        li {
+
+            &::before {
+                content: '#';
+                display: inline-block;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
 </style>
