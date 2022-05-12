@@ -3792,7 +3792,7 @@ var render = function () {
                 {
                   key: tag.id,
                   staticClass:
-                    "tag rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 py-1 px-4 font-semibold",
+                    "tag rounded rounded-lg bg-color-blue-1 text-black shadow-md shadow-color-blue-1/50 py-1 px-4 font-semibold",
                 },
                 [
                   _vm._v(
