@@ -16,6 +16,9 @@ import PostsShow from '../pages/Posts.show.vue';
 // Import categories archive
 import CategoriesArchive from '../pages/Categories.archive.vue';
 
+// Import tags archive vue
+import TagsArchive from '../pages/Tags.archive.vue';
+
 // Import pages 404 not found
 import NotFoundPage from '../pages/404.vue';
 
@@ -57,6 +60,15 @@ const routes = [
         component: CategoriesArchive,
         meta: {
             title: 'BOOLPRESS | CATEGORIA'
+        }
+    },
+
+    {
+        path: '/tags/:slug',
+        name: 'tags.archive',
+        component: TagsArchive,
+        meta: {
+            title: 'BOOLPRESS | TAG'
         }
     },
 
