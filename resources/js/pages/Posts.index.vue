@@ -5,14 +5,25 @@
         <!-- Section posts index -->
         <section class="posts_index container py-8 px-4">
 
-            <!-- Lista categories -->
-            <ul class="list_categories flex items-center justify-center gap-6 mb-16 flex-wrap">
-                <router-link tag="li" :to="{name: 'categories.archive', params: {slug: category.slug}}" v-for="category in categoriesArray" :key="category.id" 
-                    class="rounded rounded-md bg-lime-400 hover:bg-amber-300 hover:-translate-y-1.5 duration-300 text-black font-semibold max-w-max py-1 px-4 cursor-pointer"
-                >
-                    {{category.name}}
-                </router-link>
-            </ul>
+            <!-- Categories wrapper -->
+            <div class="categories_wrapper">
+
+                <!-- Lista categories -->
+                <ul class="list_categories flex items-center justify-center gap-6 mb-16 flex-wrap">
+                    <router-link tag="li" :to="{name: 'categories.archive', params: {slug: category.slug}}" v-for="category in categoriesArray" :key="category.id" 
+                        class="rounded rounded-md bg-color-lime-1 
+                            shadow-md shadow-color-lime-1/50 
+                            hover:bg-color-yellow-green-1 
+                            hover:-translate-y-1.5
+                            hover:shadow-color-yellow-green-1/50 
+                            duration-300 
+                            text-black font-semibold max-w-max py-1 px-4 cursor-pointer
+                        "
+                    >
+                        {{category.name}}
+                    </router-link>
+                </ul>
+            </div>
 
             <!-- Grid container posts cards wrapper -->
             <div class="posts_cards_wrapper grid grid-cols-1 md:grid-cols-3 lg:grid:cols-4 sm:grid-cols-2 gap-16 mb-16">
@@ -141,6 +152,6 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
+<style lang="scss" scoped>
 
 </style>
