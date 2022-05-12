@@ -37,5 +37,8 @@ Route::namespace('Api')->group( function () {
 
     // Rotta tags index
     Route::get('/tags', 'TagController@index');
+
+    // Rotta tags tag posts archive
+    Route::get('/tags/{tag}/posts', 'TagController@archive');
     
 });
