@@ -8,19 +8,19 @@
 
             <!-- Category name -->
             <div class="category_name text-center mb-16">
-                <h1 v-if="category" class="rounded rounded-md bg-lime-400 text-black font-semibold py-1 px-4 max-w-max m-auto">{{category.name}}</h1>
+                <h1 v-if="category" class="rounded rounded-md bg-color-lime-1 shadow-md shadow-color-lime-1/50 text-black font-semibold mx-auto max-w-max py-1 px-4 mb-5">{{category.name}}</h1>
             </div>
 
             <!-- Grid container posts cards wrapper -->
             <div class="posts_cards_wrapper grid grid-cols-1 md:grid-cols-3 lg:grid:cols-4 sm:grid-cols-2 gap-16">
                 
                 <!-- Card -->
-                <div v-for="element in posts" :key="element.id" class="card_post rounded-md overflow-hidden">
+                <div v-for="element in posts" :key="element.id" class="card_post rounded-md overflow-hidden shadow-lg shadow-white/30">
 
                     <!-- Img wrapper -->
                     <figure class="img_wrapper_post w-full h-52 overflow-hidden cursor-pointer">
                         <router-link :to="{name: 'posts.show', params: {slug: element.slug} }">
-                            <img :src="element.image" alt="" class="w-full object-cover">
+                            <img :src="element.image" alt="" class="w-full object-cover hover:scale-110 hover:opacity-50 duration-500">
                         </router-link>
                     </figure>
 
@@ -109,10 +109,7 @@ import PostCard from '../components/CardPost.vue';
 .category_archive {
 
     .card_post {
-        box-shadow: 0px 8px 30px 4px rgba(0,0,0,0.84);
-        -webkit-box-shadow: 0px 8px 30px 4px rgba(0,0,0,0.84);
-        -moz-box-shadow: 0px 8px 30px 4px rgba(0,0,0,0.84);
-    
+
         .img_wrapper_post {
     
             &:hover {
