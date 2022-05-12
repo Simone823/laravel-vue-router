@@ -37,8 +37,9 @@
 
                 <!-- Title -->
                 <div class="title">
-                    <h2 class="uppercase text-lg font-bold tracking-wider text-center mb-6">
-                        &#35;Tags
+                    <h2 class="uppercase text-lg font-bold tracking-wider mb-6 flex items-center justify-center gap-2">
+                        <img :src="require('/public/img/tag_icon.svg')" class="h-5 w-5 invert" alt="">
+                        Tags
                     </h2>
                 </div>
 
@@ -51,8 +52,12 @@
                             hover:shadow-color-blue-2/50 
                             duration-300 
                             text-black font-semibold max-w-max py-1 px-4 cursor-pointer
+                            flex
+                            gap-2
+                            items-center
                         "
                     >
+                        <img :src="require('/public/img/tag_icon.svg')" class="h-4 w-4" alt="">
                         {{tag.name}}
                     </router-link>
                 </ul>
@@ -254,18 +259,6 @@ export default {
             height: 1px;
             border-radius: 999px;
             opacity: 0.2;
-        }
-    }
-
-    .list_tags {
-
-        li {
-
-            &::before {
-                content: '#';
-                display: inline-block;
-                font-weight: 600;
-            }
         }
     }
 }
