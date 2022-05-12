@@ -53,7 +53,7 @@
                             duration-300 
                             text-black font-semibold max-w-max py-1 px-4 cursor-pointer
                             flex
-                            gap-2
+                            gap-1
                             items-center
                         "
                     >

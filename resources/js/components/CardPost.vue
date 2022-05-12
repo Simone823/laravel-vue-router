@@ -27,7 +27,8 @@
 
             <!-- list Tags -->
             <ul class="list_tags flex gap-5 items-center flex-wrap">
-                <li class="tag rounded rounded-lg bg-color-blue-1 text-black shadow-md shadow-color-blue-1/50 py-1 px-4 font-semibold" v-for="tag in arrayPosts.tags" :key="tag.id">
+                <li class="tag rounded rounded-lg bg-color-blue-1 text-black shadow-md shadow-color-blue-1/50 py-1 px-4 font-semibold flex items-center gap-1" v-for="tag in arrayPosts.tags" :key="tag.id">
+                    <img :src="require('/public/img/tag_icon.svg')" class="h-4 w-4" alt="">
                     {{tag.name}}
                 </li>
             </ul>
@@ -53,17 +54,5 @@
 </script>
 
 <style lang="scss" scoped>
-
-.list_tags {
-
-    li {
-
-        &::before {
-            content: '#';
-            display: inline-block;
-            font-weight: 600;
-        }
-    }
-}
 
 </style>
