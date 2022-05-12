@@ -2280,6 +2280,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
  // Import layout
 
  // Import post card
@@ -2648,7 +2653,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".categories_wrapper .title[data-v-55f45c7e] {\n  position: relative;\n}\n.categories_wrapper .title[data-v-55f45c7e]::after {\n  content: \"\";\n  display: block;\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 100%;\n  transform: translateY(8px);\n  background-color: #aaa;\n  height: 1px;\n  border-radius: 999px;\n  opacity: 0.2;\n}\n.tags_wrapper .title[data-v-55f45c7e] {\n  position: relative;\n}\n.tags_wrapper .title[data-v-55f45c7e]::after {\n  content: \"\";\n  display: block;\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 100%;\n  transform: translateY(8px);\n  background-color: #aaa;\n  height: 1px;\n  border-radius: 999px;\n  opacity: 0.2;\n}\n.tags_wrapper .list_tags li[data-v-55f45c7e]::before {\n  content: \"#\";\n  display: inline-block;\n  font-weight: 600;\n}\n.wrapper_posts .title[data-v-55f45c7e] {\n  position: relative;\n}\n.wrapper_posts .title[data-v-55f45c7e]::after {\n  content: \"\";\n  display: block;\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 100%;\n  transform: translateY(8px);\n  background-color: #aaa;\n  height: 1px;\n  border-radius: 999px;\n  opacity: 0.2;\n}", ""]);
+exports.push([module.i, ".categories_wrapper .title[data-v-55f45c7e] {\n  position: relative;\n}\n.categories_wrapper .title[data-v-55f45c7e]::after {\n  content: \"\";\n  display: block;\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 100%;\n  transform: translateY(8px);\n  background-color: #aaa;\n  height: 1px;\n  border-radius: 999px;\n  opacity: 0.2;\n}\n.tags_wrapper .title[data-v-55f45c7e] {\n  position: relative;\n}\n.tags_wrapper .title[data-v-55f45c7e]::after {\n  content: \"\";\n  display: block;\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 100%;\n  transform: translateY(8px);\n  background-color: #aaa;\n  height: 1px;\n  border-radius: 999px;\n  opacity: 0.2;\n}\n.wrapper_posts .title[data-v-55f45c7e] {\n  position: relative;\n}\n.wrapper_posts .title[data-v-55f45c7e]::after {\n  content: \"\";\n  display: block;\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 100%;\n  transform: translateY(8px);\n  background-color: #aaa;\n  height: 1px;\n  border-radius: 999px;\n  opacity: 0.2;\n}", ""]);
 
 // exports
 
@@ -4453,9 +4458,15 @@ var render = function () {
             "h2",
             {
               staticClass:
-                "uppercase text-lg font-bold tracking-wider text-center mb-6",
+                "uppercase text-lg font-bold tracking-wider mb-6 flex items-center justify-center gap-2",
             },
-            [_vm._v("\n                    #Tags\n                ")]
+            [
+              _c("img", {
+                staticClass: "h-5 w-5 invert",
+                attrs: { src: __webpack_require__(/*! /public/img/tag_icon.svg */ "./public/img/tag_icon.svg"), alt: "" },
+              }),
+              _vm._v("\n                    Tags\n                "),
+            ]
           ),
         ]),
         _vm._v(" "),
@@ -4471,13 +4482,17 @@ var render = function () {
               {
                 key: tag.id,
                 staticClass:
-                  "tag rounded rounded-lg bg-color-blue-1 text-black shadow-md shadow-color-blue-1/50 py-1 px-4 font-semibold cursor-pointer\n                        hover:bg-color-blue-2 \n                        hover:-translate-y-1.5\n                        hover:shadow-color-blue-2/50 \n                        duration-300 \n                        text-black font-semibold max-w-max py-1 px-4 cursor-pointer\n                    ",
+                  "tag rounded rounded-lg bg-color-blue-1 text-black shadow-md shadow-color-blue-1/50 py-1 px-4 font-semibold cursor-pointer\n                        hover:bg-color-blue-2 \n                        hover:-translate-y-1.5\n                        hover:shadow-color-blue-2/50 \n                        duration-300 \n                        text-black font-semibold max-w-max py-1 px-4 cursor-pointer\n                        flex\n                        gap-2\n                        items-center\n                    ",
                 attrs: {
                   tag: "li",
                   to: { name: "tags.archive", params: { slug: tag.slug } },
                 },
               },
               [
+                _c("img", {
+                  staticClass: "h-4 w-4",
+                  attrs: { src: __webpack_require__(/*! /public/img/tag_icon.svg */ "./public/img/tag_icon.svg"), alt: "" },
+                }),
                 _vm._v(
                   "\n                    " +
                     _vm._s(tag.name) +
@@ -20142,6 +20157,17 @@ try {
 
 module.exports = g;
 
+
+/***/ }),
+
+/***/ "./public/img/tag_icon.svg":
+/*!*********************************!*\
+  !*** ./public/img/tag_icon.svg ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/tag_icon.svg?5e34c30788c9edd8cc27f58e2abd59ac";
 
 /***/ }),
 
