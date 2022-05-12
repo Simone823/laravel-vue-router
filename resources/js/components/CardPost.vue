@@ -27,7 +27,7 @@
 
             <!-- list Tags -->
             <ul class="list_tags flex gap-5 items-center flex-wrap">
-                <li class="tag rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 py-1 px-4 font-semibold" v-for="tag in arrayPosts.tags" :key="tag.id">
+                <li class="tag rounded rounded-lg bg-color-blue-1 text-black shadow-md shadow-color-blue-1/50 py-1 px-4 font-semibold" v-for="tag in arrayPosts.tags" :key="tag.id">
                     {{tag.name}}
                 </li>
             </ul>
