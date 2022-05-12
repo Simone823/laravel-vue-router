@@ -2255,6 +2255,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
  // Import layout
 
  // Import post card
@@ -2604,7 +2629,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".category_archive .card_post[data-v-7b7cf439] {\n  box-shadow: 0px 8px 30px 4px rgba(0, 0, 0, 0.84);\n  -webkit-box-shadow: 0px 8px 30px 4px rgba(0, 0, 0, 0.84);\n  -moz-box-shadow: 0px 8px 30px 4px rgba(0, 0, 0, 0.84);\n}\n.category_archive .card_post .img_wrapper_post:hover img[data-v-7b7cf439] {\n  transform: scale(1.1);\n  opacity: 0.5;\n  transition: all 300ms linear;\n}", ""]);
+exports.push([module.i, ".category_archive .card_post .img_wrapper_post:hover img[data-v-7b7cf439] {\n  transform: scale(1.1);\n  opacity: 0.5;\n  transition: all 300ms linear;\n}", ""]);
 
 // exports
 
@@ -2623,7 +2648,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".tags_wrapper .list_tags li[data-v-55f45c7e]::before {\n  content: \"#\";\n  display: inline-block;\n  font-weight: 600;\n}", ""]);
+exports.push([module.i, ".categories_wrapper .title[data-v-55f45c7e] {\n  position: relative;\n}\n.categories_wrapper .title[data-v-55f45c7e]::after {\n  content: \"\";\n  display: block;\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 100%;\n  transform: translateY(8px);\n  background-color: #aaa;\n  height: 1px;\n  border-radius: 999px;\n  opacity: 0.2;\n}\n.tags_wrapper .title[data-v-55f45c7e] {\n  position: relative;\n}\n.tags_wrapper .title[data-v-55f45c7e]::after {\n  content: \"\";\n  display: block;\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 100%;\n  transform: translateY(8px);\n  background-color: #aaa;\n  height: 1px;\n  border-radius: 999px;\n  opacity: 0.2;\n}\n.tags_wrapper .list_tags li[data-v-55f45c7e]::before {\n  content: \"#\";\n  display: inline-block;\n  font-weight: 600;\n}\n.wrapper_posts .title[data-v-55f45c7e] {\n  position: relative;\n}\n.wrapper_posts .title[data-v-55f45c7e]::after {\n  content: \"\";\n  display: block;\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 100%;\n  transform: translateY(8px);\n  background-color: #aaa;\n  height: 1px;\n  border-radius: 999px;\n  opacity: 0.2;\n}", ""]);
 
 // exports
 
@@ -4232,7 +4257,7 @@ var render = function () {
               "h1",
               {
                 staticClass:
-                  "rounded rounded-md bg-lime-400 text-black font-semibold py-1 px-4 max-w-max m-auto",
+                  "rounded rounded-md bg-color-lime-1 shadow-md shadow-color-lime-1/50 text-black font-semibold mx-auto max-w-max py-1 px-4 mb-5",
               },
               [_vm._v(_vm._s(_vm.category.name))]
             )
@@ -4250,7 +4275,8 @@ var render = function () {
             "div",
             {
               key: element.id,
-              staticClass: "card_post rounded-md overflow-hidden",
+              staticClass:
+                "card_post rounded-md overflow-hidden shadow-lg shadow-white/30",
             },
             [
               _c(
@@ -4272,7 +4298,8 @@ var render = function () {
                     },
                     [
                       _c("img", {
-                        staticClass: "w-full object-cover",
+                        staticClass:
+                          "w-full object-cover hover:scale-110 hover:opacity-50 duration-500",
                         attrs: { src: element.image, alt: "" },
                       }),
                     ]
@@ -4375,6 +4402,17 @@ var render = function () {
   return _c("LayoutDefault", [
     _c("section", { staticClass: "posts_index container py-8 px-4" }, [
       _c("div", { staticClass: "categories_wrapper" }, [
+        _c("div", { staticClass: "title" }, [
+          _c(
+            "h2",
+            {
+              staticClass:
+                "uppercase text-lg font-bold tracking-wider text-center mb-6",
+            },
+            [_vm._v("\n                    Categorie\n                ")]
+          ),
+        ]),
+        _vm._v(" "),
         _c(
           "ul",
           {
@@ -4410,6 +4448,17 @@ var render = function () {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "tags_wrapper" }, [
+        _c("div", { staticClass: "title" }, [
+          _c(
+            "h2",
+            {
+              staticClass:
+                "uppercase text-lg font-bold tracking-wider text-center mb-6",
+            },
+            [_vm._v("\n                    #Tags\n                ")]
+          ),
+        ]),
+        _vm._v(" "),
         _c(
           "ul",
           {
@@ -4441,20 +4490,37 @@ var render = function () {
         ),
       ]),
       _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass:
-            "posts_cards_wrapper grid grid-cols-1 md:grid-cols-3 lg:grid:cols-4 sm:grid-cols-2 gap-16 mb-16",
-        },
-        _vm._l(_vm.postsArray, function (element) {
-          return _c("PostCard", {
-            key: element.id,
-            attrs: { arrayPosts: element },
-          })
-        }),
-        1
-      ),
+      _c("div", { staticClass: "wrapper_posts" }, [
+        _c("div", { staticClass: "title" }, [
+          _c(
+            "h2",
+            {
+              staticClass:
+                "uppercase text-lg font-bold tracking-wider text-center mb-6",
+            },
+            [
+              _vm._v(
+                "\n                        Post Pubblicati\n                    "
+              ),
+            ]
+          ),
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass:
+              "posts_cards_wrapper grid grid-cols-1 md:grid-cols-3 lg:grid:cols-4 sm:grid-cols-2 gap-16 mb-16",
+          },
+          _vm._l(_vm.postsArray, function (element) {
+            return _c("PostCard", {
+              key: element.id,
+              attrs: { arrayPosts: element },
+            })
+          }),
+          1
+        ),
+      ]),
       _vm._v(" "),
       _c(
         "ul",
