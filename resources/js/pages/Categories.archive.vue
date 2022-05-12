@@ -29,11 +29,13 @@
 
                         <!-- Title -->
                         <router-link :to="{name: 'posts.show', params: {slug: element.slug} }">
-                            <h3 class="title mb-5 text-xl max-w-max hover:text-cyan-300 transition-colors duration-300">{{element.title}}</h3>
+                            <h3 class="title mb-5 text-xl max-w-max hover:text-color-yellow-green-1 transition-colors duration-300">{{element.title}}</h3>
                         </router-link>
 
-                        <!-- Description -->
-                        <p class="description description text-gray-300 leading-loose">{{element.description}}</p>
+                        <!-- Category -->
+                        <p v-if="category" class="category rounded rounded-md bg-color-lime-1 shadow-md shadow-color-lime-1/50 text-black font-semibold max-w-max py-1 px-4 mb-5">
+                            {{category.name}}
+                        </p>
                     </div>
 
                 </div>
