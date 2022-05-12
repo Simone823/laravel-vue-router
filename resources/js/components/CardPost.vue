@@ -1,21 +1,29 @@
 <template>
 
     <!-- Card -->
-    <div class="card_post rounded-md overflow-hidden">
+    <div class="card_post rounded-md overflow-hidden shadow-lg shadow-white/30">
 
         <!-- Img wrapper -->
         <figure class="img_wrapper_post w-full h-52 overflow-hidden cursor-pointer">
             <router-link :to="{name: 'posts.show', params: {slug: arrayPosts.slug}}">
-                <img :src="arrayPosts.image" alt="" class="w-full object-cover">
+                <img :src="arrayPosts.image" alt="" class="w-full object-cover hover:scale-110 hover:opacity-50 duration-500">
             </router-link>
         </figure>
 
         <!-- Description card -->
         <div class="description_post p-5">
+
+            <!-- Title -->
             <router-link :to="{name: 'posts.show', params: {slug: arrayPosts.slug}}">
-                <h3 class="title mb-5 text-xl max-w-max hover:text-cyan-300 transition-colors duration-300">{{arrayPosts.title}}</h3>
+                <h3 class="title mb-5 text-xl max-w-max hover:text-color-yellow-green-1 transition-colors duration-300">
+                    {{arrayPosts.title}}
+                </h3>
             </router-link>
-            <p v-if="arrayPosts.category" class="category rounded rounded-md bg-lime-400 text-black font-semibold max-w-max py-1 px-4 mb-5">{{arrayPosts.category.name}}</p>
+
+            <!-- Category -->
+            <p v-if="arrayPosts.category" class="category rounded rounded-md bg-color-lime-1 shadow-md shadow-color-lime-1/50 text-black font-semibold max-w-max py-1 px-4 mb-5">
+                {{arrayPosts.category.name}}
+            </p>
 
             <!-- list Tags -->
             <ul class="list_tags flex gap-5 items-center flex-wrap">
@@ -45,23 +53,5 @@
 </script>
 
 <style lang="scss" scoped>
-
-.card_post {
-    box-shadow: 0px 8px 30px 4px rgba(0,0,0,0.84);
-    -webkit-box-shadow: 0px 8px 30px 4px rgba(0,0,0,0.84);
-    -moz-box-shadow: 0px 8px 30px 4px rgba(0,0,0,0.84);
-
-    .img_wrapper_post {
-
-        &:hover {
-           
-            img {
-                transform: scale(1.1);
-                opacity: 0.5;
-                transition: all 300ms linear;
-            }
-        }
-    }
-}
 
 </style>
