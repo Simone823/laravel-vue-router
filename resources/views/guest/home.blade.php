@@ -32,6 +32,7 @@
                         'color-lime-1': '#06FF00',
                         'color-yellow-green-1': '#ffff40',
                         'color-blue-1': '#99FEFF',
+                        'color-blue-2': '#94B3FD',
                     },
                 }
             }
