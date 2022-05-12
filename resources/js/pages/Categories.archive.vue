@@ -6,6 +6,13 @@
         <!-- Sezione category archive -->
         <section class="category_archive container py-8 px-4">
 
+            <!-- Section title -->
+            <div class="section_title">
+                <h2 class="uppercase text-lg font-bold tracking-wider text-center mb-6">
+                    Categoria
+                </h2>
+            </div>
+
             <!-- Category name -->
             <div class="category_name text-center mb-16">
                 <h1 v-if="category" class="rounded rounded-md bg-color-lime-1 shadow-md shadow-color-lime-1/50 text-black font-semibold mx-auto max-w-max py-1 px-4 mb-5">{{category.name}}</h1>
@@ -109,6 +116,24 @@ import PostCard from '../components/CardPost.vue';
 <style lang="scss" scoped>
 
 .category_archive {
+
+    .section_title {
+        position: relative;
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 100%;
+            transform: translateY(8px);
+            background-color: #aaa;
+            height: 1px;
+            border-radius: 999px;
+            opacity: 0.2;
+        }
+    }
 
     .card_post {
 
