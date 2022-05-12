@@ -27,6 +27,11 @@
                     container: {
                         center: true,
                     },
+
+                    colors: {
+                        'color-lime-1': '#06FF00',
+                        'color-yellow-green-1': '#ffff40',
+                    },
                 }
             }
         }
