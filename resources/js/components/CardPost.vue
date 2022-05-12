@@ -54,4 +54,16 @@
 
 <style lang="scss" scoped>
 
+.list_tags {
+
+    li {
+
+        &::before {
+            content: '#';
+            display: inline-block;
+            font-weight: 600;
+        }
+    }
+}
+
 </style>
