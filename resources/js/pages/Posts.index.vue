@@ -25,6 +25,25 @@
                 </ul>
             </div>
 
+            <!-- Tags wrapper -->
+            <div class="tags_wrapper">
+
+                <!-- Lista tags -->
+                <ul class="list_tags flex items-center justify-center gap-6 mb-16 flex-wrap">
+                    <router-link tag="li" :to="{name: 'tags.archive', params: {slug: tag.slug}}" v-for="tag in arrayTags" :key="tag.id" 
+                        class="tag rounded rounded-lg bg-color-blue-1 text-black shadow-md shadow-color-blue-1/50 py-1 px-4 font-semibold cursor-pointer
+                            hover:bg-color-blue-2 
+                            hover:-translate-y-1.5
+                            hover:shadow-color-blue-2/50 
+                            duration-300 
+                            text-black font-semibold max-w-max py-1 px-4 cursor-pointer
+                        "
+                    >
+                        {{tag.name}}
+                    </router-link>
+                </ul>
+            </div>
+
             <!-- Grid container posts cards wrapper -->
             <div class="posts_cards_wrapper grid grid-cols-1 md:grid-cols-3 lg:grid:cols-4 sm:grid-cols-2 gap-16 mb-16">
                 <!-- Componente card post -->
@@ -74,6 +93,8 @@ export default {
             // Array categories
             categoriesArray: [],
 
+            // Array tags
+            arrayTags: [],
 
             // Current page
             currentPage: 1,
@@ -137,7 +158,20 @@ export default {
 
             // Scroll to top 0px
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        },
+
+        // Funzione chiamata server recupero tags
+        recuperoTags: function() {
+            axios.get('/api/tags')
+            .then( res => {
+
+                // Recupero con la destrutturazione i tags
+                const {tags} = res.data;
+
+                // Pusho la risposta con i tags nell'array tags
+                this.arrayTags = tags;
+            })
+        },
 
     },
 
@@ -148,6 +182,9 @@ export default {
 
         // Richiamo funzione recupero categories
         this.recuperoCategories();
+
+        // Richiamo funzione recupero tags
+        this.recuperoTags();
     }
 }
 </script>
