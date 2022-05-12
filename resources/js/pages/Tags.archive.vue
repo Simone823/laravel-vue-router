@@ -8,7 +8,10 @@
 
             <!-- Tag name -->
             <div class="tag_name text-center mb-16">
-                <h1 v-if="tag" class="tag rounded rounded-lg bg-color-blue-1 text-black shadow-md shadow-color-blue-1/50 py-1 px-4 font-semibold mx-auto max-w-max">{{tag.name}}</h1>
+                <h1 v-if="tag" class="tag rounded rounded-lg bg-color-blue-1 text-black shadow-md shadow-color-blue-1/50 py-1 px-4 font-semibold mx-auto max-w-max flex items-center gap-1">
+                    <img :src="require('/public/img/tag_icon.svg')" class="h-4 w-4" alt="">
+                    {{tag.name}}
+                </h1>
             </div>
 
             <!-- Grid container posts cards wrapper -->
@@ -95,20 +98,5 @@ import LayoutDefault from '../layouts/layout.vue';
 </script>
 
 <style lang="scss" scoped>
-
-.tags_archive {
-
-    .tag_name {
-
-        h1 {
-
-            &::before {
-                content: '#';
-                display: inline-block;
-                font-weight: 600;
-            }
-        }
-    }
-}
 
 </style>
