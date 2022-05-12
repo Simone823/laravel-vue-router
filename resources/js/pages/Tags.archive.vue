@@ -35,8 +35,11 @@
                             <h3 class="title mb-5 text-xl max-w-max hover:text-color-yellow-green-1 transition-colors duration-300">{{element.title}}</h3>
                         </router-link>
 
-                        <!-- Description -->
-                        <p class="description description text-gray-300 leading-loose">{{element.description}}</p>
+                        <!-- Tags -->
+                        <p v-if="tag" class="tag rounded rounded-lg max-w-max bg-color-blue-1 text-black shadow-md shadow-color-blue-1/50 py-1 px-4 font-semibold flex items-center gap-1">
+                            <img :src="require('/public/img/tag_icon.svg')" class="h-4 w-4" alt="">
+                            {{tag.name}}
+                        </p>
                     </div>
 
                 </div>
