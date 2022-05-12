@@ -96,4 +96,19 @@ import LayoutDefault from '../layouts/layout.vue';
 
 <style lang="scss" scoped>
 
+.tags_archive {
+
+    .tag_name {
+
+        h1 {
+
+            &::before {
+                content: '#';
+                display: inline-block;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
 </style>
