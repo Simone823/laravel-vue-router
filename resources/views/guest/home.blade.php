@@ -33,6 +33,8 @@
                         'color-yellow-green-1': '#ffff40',
                         'color-blue-1': '#99FEFF',
                         'color-blue-2': '#94B3FD',
+                        'color-red-1': '#FF9090',
+                        'color-red-2': '#FF6363',
                     },
                 }
             }
