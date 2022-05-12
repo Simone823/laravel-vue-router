@@ -81,11 +81,16 @@
             </div>
     
             <!-- Pages -->
-            <ul class="pages_control flex items-center justify-center gap-8 flex-wrap">
+            <ul class="pages_control flex items-center justify-center gap-x-4 flex-wrap">
+                <li class="current_page w-full text-center mb-6 uppercase font-bold tracking-wider text-md">
+                    {{`Pagina ${currentPage}`}}
+                </li>
                <li v-for="number in lastPage" :key="number" 
                     :class="[
-                        currentPage === number ? 'bg-gradient-to-r from-pink-500 to-yellow-500' : 'bg-gradient-to-r from-cyan-500 to-blue-500', 
-                        'dot hover:from-pink-500 hover:to-yellow-500 rounded-full h-11 w-11 flex items-center justify-center cursor-pointer text-base font-bold'
+                        currentPage === number ? 'bg-color-red-2 shadow-color-red-2/50' : 'bg-color-red-1 shadow-color-red-1/50',
+                        'shadow-md',
+                        'hover:bg-color-red-2 hover:shadow-color-red-2 duration-300 text-black', 
+                        'dot rounded-full h-8 w-8 flex items-center justify-center cursor-pointer text-base font-bold'
                     ]"
                     @click="recuperoPosts(number)"
                 >
@@ -266,6 +271,27 @@ export default {
 .wrapper_posts {
 
     .title {
+        position: relative;
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 100%;
+            transform: translateY(8px);
+            background-color: #aaa;
+            height: 1px;
+            border-radius: 999px;
+            opacity: 0.2;
+        }
+    }
+}
+
+.pages_control {
+
+    .current_page {
         position: relative;
 
         &::after {
