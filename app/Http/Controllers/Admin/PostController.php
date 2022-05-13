@@ -9,6 +9,7 @@ use App\Tag;
 use App\User;
 use Facade\FlareClient\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class PostController extends Controller
@@ -67,7 +68,7 @@ class PostController extends Controller
             'description' => 'nullable',
             'category_id' => 'nullable|exists:categories,id',
             'tags' => 'exists:tags,id',
-            'image' => 'required|url',
+            'image' => 'required|file|image|mimetypes:image/jpeg,image/png|max:2048',
             'publication_date' => 'nullable|date|before_or_equal:today',
             'user_id' => 'required|exists:users,id'
         ]);
@@ -90,6 +91,9 @@ class PostController extends Controller
             $counter++;
             $post_present = Post::where('slug', $slug)->first();
         }
+        
+        // Image storage
+        $imageStorage = Storage::put('uploads', $data['image']);
 
         // Creo un nuovo post
         $post = new Post();
@@ -99,6 +103,9 @@ class PostController extends Controller
 
         // Imposto lo sluga post
         $post->slug = $slug;
+
+        // Importo l'immagine
+        $post->image = $imageStorage;
 
         // Salvo i dati
         $post->save();
