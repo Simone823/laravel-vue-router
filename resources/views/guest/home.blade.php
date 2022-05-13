@@ -21,20 +21,21 @@
             theme: {
                 extend: {
                     colors: {
-                        clifford: '#da373d', 
-                    },
-
-                    container: {
-                        center: true,
-                    },
-
-                    colors: {
+                        clifford: '#da373d',
                         'color-lime-1': '#06FF00',
                         'color-yellow-green-1': '#ffff40',
                         'color-blue-1': '#99FEFF',
                         'color-blue-2': '#94B3FD',
                         'color-red-1': '#FF9090',
                         'color-red-2': '#FF6363',
+                        'color-yellow-1': '#F5F7B2',
+                        'color-gray-1': '#AAAAAA',
+                        'color-red-3': '#FF1700',
+                        'color-blue-3': '#2FA4FF'
+                    },
+
+                    container: {
+                        center: true,
                     },
                 }
             }
