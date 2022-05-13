@@ -8,7 +8,7 @@
     <section id="form_create_wrapper" class="container text-white">
 
         {{-- Form aggiungi elemento --}}
-        <form action="{{route('admin.posts.store')}}" method="POST">
+        <form action="{{route('admin.posts.store')}}" method="POST" enctype="multipart/form-data">
 
             {{-- key --}}
             @csrf
@@ -84,8 +84,8 @@
 
             {{-- Image --}}
             <div class="form-group">
-                <label for="image">Immagine</label>
-                <input type="text" class="form-control @error('image') is-invalid @enderror" name="image" id="image" placeholder="URL Immagine" value="{{old('image')}}">
+                <label for="image" class="d-block">Immagine</label>
+                <input accept=".jpeg, .png" type="file" class="@error('image') is-invalid @enderror" name="image" id="image" value="{{old('image')}}">
 
                 {{-- Error validation --}}
                 @error('image')
