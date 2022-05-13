@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\HomeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // Rotta namespace Api
 Route::namespace('Api')->group( function () {
+
+    // Rotta homepage
+    Route::get('/', 'HomeController@index');
 
     // Rotta resource Posts Post controller only index, show
     Route::resource('/posts', 'PostController')->only([
