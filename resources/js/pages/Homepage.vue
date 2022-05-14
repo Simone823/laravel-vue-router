@@ -11,14 +11,19 @@
                 <img :src="element.image" alt="" class="w-full object-cover">
             </div>
 
-            <!-- Icone controlli slider -->
-            <ul class="list_icon flex items-center justify-between w-full px-5">
+            <!-- Lista frecce slider -->
+            <ul class="list_arrow_icon flex items-center justify-between w-full px-5">
                 <li class="icon_left cursor-pointer h-10 w-10 rotate-180" @click="arrowUp()" @mouseenter="stopAutoPlaySlider()">
                    <img :src="require('/public/img/arrow_icon.svg')" alt="">
                 </li>
                 <li class="icon_right cursor-pointer h-10 w-10" @click="arrowDown()" @mouseenter="stopAutoPlaySlider()">
                    <img :src="require('/public/img/arrow_icon.svg')" alt="">
                 </li>
+            </ul>
+
+            <!-- Lista barre controlli -->
+            <ul class="list_bar_controls flex items-center justify-center gap-4" @mouseenter="stopAutoPlaySlider()" @mouseleave="autoPlaySlider()">
+                <li @click="goToSlide(index)" class="h-2 w-6 rounded-full cursor-pointer" :class="currentPost == index ? 'bg-white' : 'bg-color-gray-2' " v-for="(post, index) in posts" :key="index"></li>
             </ul>
 
         </section>
@@ -96,6 +101,11 @@ import LayoutDefault from '../layouts/layout.vue';
             // Funzione stop autoplay slider
             stopAutoPlaySlider: function() {
                 clearInterval(this.intervallo);
+            },
+
+            // Funzione click go to slide
+            goToSlide: function(i) {
+                this.currentPost = i;
             }
         },
 
@@ -120,11 +130,11 @@ import LayoutDefault from '../layouts/layout.vue';
         height: 650px;
 
         img {
-            -webkit-animation: display 400ms ease-in-out;
+            -webkit-animation: display 600ms ease-out;
         }
     }
 
-    .list_icon {
+    .list_arrow_icon {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -132,15 +142,22 @@ import LayoutDefault from '../layouts/layout.vue';
         li {
 
             img {
-                filter: invert(100%);
 
                 &:hover {
-                    filter: invert(60%);
-                    transform: scale(1.1);
-                    transition: all 350ms ease-in-out;
+                    filter: invert(94%) sepia(100%) saturate(0%) hue-rotate(169deg) brightness(105%) contrast(101%);
+                    transform: scale(1.15);
+                    transition: all 300ms ease-in-out;
                 }
             }
         }
+    }
+
+    .list_bar_controls {
+        position: absolute;
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+
     }
 
     @keyframes display {
