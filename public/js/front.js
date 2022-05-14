@@ -2001,6 +2001,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'LayoutDefault'
 });
@@ -2160,6 +2169,14 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _layouts_layout_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../layouts/layout.vue */ "./resources/js/layouts/layout.vue");
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2763,7 +2780,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".slider_wrapper[data-v-00e83377] {\n  height: 650px;\n  position: relative;\n}\n.slider_wrapper .img_wrapper_post[data-v-00e83377] {\n  height: 650px;\n}\n.slider_wrapper .img_wrapper_post img[data-v-00e83377] {\n  -webkit-animation: display-data-v-00e83377 600ms ease-out;\n}\n.slider_wrapper .list_arrow_icon[data-v-00e83377] {\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.slider_wrapper .list_arrow_icon li img[data-v-00e83377]:hover {\n  filter: invert(94%) sepia(100%) saturate(0%) hue-rotate(169deg) brightness(105%) contrast(101%);\n  transform: scale(1.15);\n  transition: all 300ms ease-in-out;\n}\n.slider_wrapper .list_bar_controls[data-v-00e83377] {\n  position: absolute;\n  bottom: 25px;\n  left: 50%;\n  transform: translateX(-50%);\n}\n@-webkit-keyframes display-data-v-00e83377 {\nfrom {\n    display: none;\n    opacity: 0;\n}\nto {\n    display: block;\n    opacity: 1;\n}\n}\n@keyframes display-data-v-00e83377 {\nfrom {\n    display: none;\n    opacity: 0;\n}\nto {\n    display: block;\n    opacity: 1;\n}\n}", ""]);
+exports.push([module.i, ".slider_wrapper[data-v-00e83377] {\n  height: 650px;\n  position: relative;\n}\n.slider_wrapper .img_wrapper_post[data-v-00e83377] {\n  height: 650px;\n}\n.slider_wrapper .img_wrapper_post img[data-v-00e83377] {\n  -webkit-animation: display-data-v-00e83377 600ms ease-out;\n}\n.slider_wrapper .img_wrapper_post .description[data-v-00e83377] {\n  position: absolute;\n  bottom: 100px;\n  left: 10%;\n}\n.slider_wrapper .list_arrow_icon[data-v-00e83377] {\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.slider_wrapper .list_arrow_icon li img[data-v-00e83377]:hover {\n  filter: invert(94%) sepia(100%) saturate(0%) hue-rotate(169deg) brightness(105%) contrast(101%);\n  transform: scale(1.15);\n  transition: all 300ms ease-in-out;\n}\n.slider_wrapper .list_bar_controls[data-v-00e83377] {\n  position: absolute;\n  bottom: 25px;\n  left: 50%;\n  transform: translateX(-50%);\n}\n@-webkit-keyframes display-data-v-00e83377 {\nfrom {\n    display: none;\n    opacity: 0;\n}\nto {\n    display: block;\n    opacity: 0.6;\n}\n}\n@keyframes display-data-v-00e83377 {\nfrom {\n    display: none;\n    opacity: 0;\n}\nto {\n    display: block;\n    opacity: 0.6;\n}\n}", ""]);
 
 // exports
 
@@ -4316,15 +4333,31 @@ var render = function () {
         "header",
         {
           staticClass:
-            "py-8 px-4 mb-4 bg-stone-900 shadow-md shadow-white/30 w-full fixed z-50",
+            "py-4 px-8 bg-stone-900 shadow-sm shadow-white/30 w-full fixed z-50 flex items-center gap-x-48",
         },
         [
-          _c("nav", { staticClass: "nav-menu" }, [
+          _c(
+            "figure",
+            { staticClass: "logo_wrapper h-16 w-72" },
+            [
+              _c("router-link", { attrs: { to: "/" } }, [
+                _c("img", {
+                  attrs: {
+                    src: __webpack_require__(/*! /public/img/boolpress_logo.svg */ "./public/img/boolpress_logo.svg"),
+                    alt: "",
+                  },
+                }),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("nav", { staticClass: "nav-menu grow" }, [
             _c(
               "ul",
               {
                 staticClass:
-                  "flex items-center justify-center gap-8 uppercase tracking-widest font-semibold text-color-blue-3",
+                  "flex items-center gap-8 uppercase tracking-widest font-semibold text-color-blue-3",
               },
               [
                 _c(
@@ -4593,7 +4626,7 @@ var render = function () {
   return _c("LayoutDefault", [
     _c(
       "section",
-      { staticClass: "slider_wrapper w-full" },
+      { staticClass: "slider_wrapper w-full pt-4" },
       [
         _vm._l(_vm.posts, function (element, index) {
           return _c(
@@ -4613,9 +4646,32 @@ var render = function () {
             },
             [
               _c("img", {
-                staticClass: "w-full object-cover",
+                staticClass: "w-full object-cover opacity-60",
                 attrs: { src: element.image, alt: "" },
               }),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "description text-white font-bold text-lg tracking-wider",
+                },
+                [
+                  _c("h2", { staticClass: "title mb-2" }, [
+                    _vm._v(_vm._s(element.title)),
+                  ]),
+                  _vm._v(" "),
+                  element.category
+                    ? _c("p", { staticClass: "category mb-2" }, [
+                        _vm._v(_vm._s("Categoria: " + element.category.name)),
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "publication_date" }, [
+                    _vm._v(_vm._s("Pubblicato il " + element.publication_date)),
+                  ]),
+                ]
+              ),
             ]
           )
         }),
@@ -20564,6 +20620,17 @@ module.exports = g;
 /***/ (function(module, exports) {
 
 module.exports = "/images/arrow_icon.svg?cc0261d318bdf5bdd33ba55412d6493d";
+
+/***/ }),
+
+/***/ "./public/img/boolpress_logo.svg":
+/*!***************************************!*\
+  !*** ./public/img/boolpress_logo.svg ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/boolpress_logo.svg?8a28169ba56e45dd33d5e47062c39a12";
 
 /***/ }),
 
