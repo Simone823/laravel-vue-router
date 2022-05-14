@@ -4,11 +4,19 @@
     <LayoutDefault>
 
         <!-- Sezione slider posts -->
-        <section class="slider_wrapper w-full">
+        <section class="slider_wrapper w-full pt-4">
 
             <!-- Img wrapper posts -->
             <div class="img_wrapper_post" v-for="(element, index) in posts" :key="index" :class="currentPost == index ? 'block' : 'hidden' " @mouseenter="stopAutoPlaySlider()" @mouseleave="autoPlaySlider()">
-                <img :src="element.image" alt="" class="w-full object-cover">
+                
+                <img :src="element.image" alt="" class="w-full object-cover opacity-60">
+
+                <!-- Description -->
+                <div class="description text-white font-bold text-lg tracking-wider">
+                    <h2 class="title mb-2">{{element.title}}</h2>
+                    <p v-if="element.category" class="category mb-2">{{`Categoria: ${element.category.name}`}}</p>
+                    <p class="publication_date">{{`Pubblicato il ${element.publication_date}`}}</p>
+                </div>
             </div>
 
             <!-- Lista frecce slider -->
@@ -132,6 +140,12 @@ import LayoutDefault from '../layouts/layout.vue';
         img {
             -webkit-animation: display 600ms ease-out;
         }
+
+        .description {
+            position: absolute;
+            bottom: 100px;
+            left: 10%;
+        }
     }
 
     .list_arrow_icon {
@@ -168,7 +182,7 @@ import LayoutDefault from '../layouts/layout.vue';
 
         to {
             display: block;
-            opacity: 1;
+            opacity: 0.60;
         }
     }
 }
