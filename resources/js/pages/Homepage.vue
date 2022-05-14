@@ -23,7 +23,7 @@
 
             <!-- Lista barre controlli -->
             <ul class="list_bar_controls flex items-center justify-center gap-4" @mouseenter="stopAutoPlaySlider()" @mouseleave="autoPlaySlider()">
-                <li @click="goToSlide(index)" class="h-2 w-6 rounded-full cursor-pointer" :class="currentPost == index ? 'bg-white' : 'bg-color-gray-2' " v-for="(post, index) in posts" :key="index"></li>
+                <li @click="goToSlide(index)" class="h-2 w-6 rounded-full cursor-pointer shadow-md shadow-black/20" :class="currentPost == index ? 'bg-white' : 'bg-color-gray-2' " v-for="(post, index) in posts" :key="index"></li>
             </ul>
 
         </section>

@@ -4692,7 +4692,8 @@ var render = function () {
           _vm._l(_vm.posts, function (post, index) {
             return _c("li", {
               key: index,
-              staticClass: "h-2 w-6 rounded-full cursor-pointer",
+              staticClass:
+                "h-2 w-6 rounded-full cursor-pointer shadow-md shadow-black/20",
               class: _vm.currentPost == index ? "bg-white" : "bg-color-gray-2",
               on: {
                 click: function ($event) {
