@@ -13,10 +13,10 @@
 
             <!-- Lista frecce slider -->
             <ul class="list_arrow_icon flex items-center justify-between w-full px-5">
-                <li class="icon_left cursor-pointer h-10 w-10 rotate-180" @click="arrowUp()" @mouseenter="stopAutoPlaySlider()">
+                <li class="icon_left cursor-pointer h-10 w-10 rotate-180" @click="arrowDown()" @mouseenter="stopAutoPlaySlider()">
                    <img :src="require('/public/img/arrow_icon.svg')" alt="">
                 </li>
-                <li class="icon_right cursor-pointer h-10 w-10" @click="arrowDown()" @mouseenter="stopAutoPlaySlider()">
+                <li class="icon_right cursor-pointer h-10 w-10" @click="arrowUp()" @mouseenter="stopAutoPlaySlider()">
                    <img :src="require('/public/img/arrow_icon.svg')" alt="">
                 </li>
             </ul>
