@@ -42,7 +42,8 @@
                     <td>{{$post->category ? $post->category->name : 'null'}}</td>
                     <td>
                         @foreach ($post->tags as $tag)
-                            <span style="background-color: {{$tag->color}}; font-size: 14px;" class="badge badge-pill py-2 px-3 my-2 text-dark">{{$tag->name}}</span>
+                            <span style="font-size: 14px;" class="badge badge-pill py-2 px-3 my-2 text-white bg-primary">{{$tag->name}}</span>
+
 
                         @endforeach
                     </td>
@@ -128,7 +129,7 @@
                 @foreach ($tags as $elTag)
                     <div class="form-check d-flex align-items-center mb-3">
                         <input {{$post->tags->contains($elTag) ? 'checked' : ''}} class="form-check-input @error('tags') is-invalid @enderror" type="checkbox" name="tags[]" value="{{$elTag->id}}" id="tags-{{$elTag->id}}">
-                        <label style="background-color: {{$elTag->color}}" class="form-check-label badge badge-pill py-1 px-2 text-dark" for="tags-{{$elTag->id}}">{{$elTag->name}}</label>
+                        <label class="form-check-label badge badge-pill py-2 px-3 my-2 text-white bg-primary" for="tags-{{$elTag->id}}">{{$elTag->name}}</label>
                     </div>
                 @endforeach
 
