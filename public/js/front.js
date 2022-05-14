@@ -4633,7 +4633,7 @@ var render = function () {
                 staticClass: "icon_left cursor-pointer h-10 w-10 rotate-180",
                 on: {
                   click: function ($event) {
-                    return _vm.arrowUp()
+                    return _vm.arrowDown()
                   },
                   mouseenter: function ($event) {
                     return _vm.stopAutoPlaySlider()
@@ -4656,7 +4656,7 @@ var render = function () {
                 staticClass: "icon_right cursor-pointer h-10 w-10",
                 on: {
                   click: function ($event) {
-                    return _vm.arrowDown()
+                    return _vm.arrowUp()
                   },
                   mouseenter: function ($event) {
                     return _vm.stopAutoPlaySlider()
