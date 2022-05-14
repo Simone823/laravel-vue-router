@@ -31,7 +31,8 @@
                         'color-yellow-1': '#F5F7B2',
                         'color-gray-1': '#AAAAAA',
                         'color-red-3': '#FF1700',
-                        'color-blue-3': '#2FA4FF'
+                        'color-blue-3': '#2FA4FF',
+                        'color-gray-2': '#596673'
                     },
 
                     container: {
