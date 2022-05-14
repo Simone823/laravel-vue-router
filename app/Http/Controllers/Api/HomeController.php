@@ -16,7 +16,7 @@ class HomeController extends Controller
     public function index()
     {
         // Recupero alcuni post dal db
-        $posts = Post::where('publication_date', "!=", null)->orderBy('publication_date', 'DESC')->limit(3)->get();
+        $posts = Post::where('publication_date', "!=", null)->with('category')->orderBy('publication_date', 'DESC')->limit(3)->get();
 
         // Return response json posts
         return response()->json([
