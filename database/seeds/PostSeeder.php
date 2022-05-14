@@ -38,7 +38,7 @@ class PostSeeder extends Seeder
             // Imposto le proprietà con il faker
             $posts->title = $faker->sentence();
             $posts->slug = Str::slug($posts->title, '-');
-            $posts->description = $faker->paragraphs(2, true);
+            $posts->description = $faker->paragraphs(20, true);
             $posts->category_id = $faker->randomElement($categoryId);
 
             // Tags random
