@@ -4,7 +4,7 @@
     <div id="app" class="layout_default bg-stone-800 text-white">
 
         <!-- Header nav -->
-        <header class="py-8 px-4 mb-4 bg-stone-800 shadow-md shadow-white/30 w-full fixed z-50">
+        <header class="py-8 px-4 mb-4 bg-stone-900 shadow-md shadow-white/30 w-full fixed z-50">
             <nav class="nav-menu">
                 <ul class="flex items-center justify-center gap-8 uppercase tracking-widest font-semibold text-color-blue-3">
                     <li>
