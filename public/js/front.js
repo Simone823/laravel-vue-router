@@ -2189,6 +2189,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 // Import layout default
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2241,6 +2246,10 @@ __webpack_require__.r(__webpack_exports__);
     // Funzione stop autoplay slider
     stopAutoPlaySlider: function stopAutoPlaySlider() {
       clearInterval(this.intervallo);
+    },
+    // Funzione click go to slide
+    goToSlide: function goToSlide(i) {
+      this.currentPost = i;
     }
   },
   mounted: function mounted() {
@@ -2754,7 +2763,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".slider_wrapper[data-v-00e83377] {\n  height: 650px;\n  position: relative;\n}\n.slider_wrapper .img_wrapper_post[data-v-00e83377] {\n  height: 650px;\n}\n.slider_wrapper .img_wrapper_post img[data-v-00e83377] {\n  -webkit-animation: display-data-v-00e83377 400ms ease-in-out;\n}\n.slider_wrapper .list_icon[data-v-00e83377] {\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.slider_wrapper .list_icon li img[data-v-00e83377] {\n  filter: invert(100%);\n}\n.slider_wrapper .list_icon li img[data-v-00e83377]:hover {\n  filter: invert(60%);\n  transform: scale(1.1);\n  transition: all 350ms ease-in-out;\n}\n@-webkit-keyframes display-data-v-00e83377 {\nfrom {\n    display: none;\n    opacity: 0;\n}\nto {\n    display: block;\n    opacity: 1;\n}\n}\n@keyframes display-data-v-00e83377 {\nfrom {\n    display: none;\n    opacity: 0;\n}\nto {\n    display: block;\n    opacity: 1;\n}\n}", ""]);
+exports.push([module.i, ".slider_wrapper[data-v-00e83377] {\n  height: 650px;\n  position: relative;\n}\n.slider_wrapper .img_wrapper_post[data-v-00e83377] {\n  height: 650px;\n}\n.slider_wrapper .img_wrapper_post img[data-v-00e83377] {\n  -webkit-animation: display-data-v-00e83377 600ms ease-out;\n}\n.slider_wrapper .list_arrow_icon[data-v-00e83377] {\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.slider_wrapper .list_arrow_icon li img[data-v-00e83377]:hover {\n  filter: invert(94%) sepia(100%) saturate(0%) hue-rotate(169deg) brightness(105%) contrast(101%);\n  transform: scale(1.15);\n  transition: all 300ms ease-in-out;\n}\n.slider_wrapper .list_bar_controls[data-v-00e83377] {\n  position: absolute;\n  bottom: 25px;\n  left: 50%;\n  transform: translateX(-50%);\n}\n@-webkit-keyframes display-data-v-00e83377 {\nfrom {\n    display: none;\n    opacity: 0;\n}\nto {\n    display: block;\n    opacity: 1;\n}\n}\n@keyframes display-data-v-00e83377 {\nfrom {\n    display: none;\n    opacity: 0;\n}\nto {\n    display: block;\n    opacity: 1;\n}\n}", ""]);
 
 // exports
 
@@ -4307,7 +4316,7 @@ var render = function () {
         "header",
         {
           staticClass:
-            "py-8 px-4 mb-4 bg-stone-800 shadow-md shadow-white/30 w-full fixed z-50",
+            "py-8 px-4 mb-4 bg-stone-900 shadow-md shadow-white/30 w-full fixed z-50",
         },
         [
           _c("nav", { staticClass: "nav-menu" }, [
@@ -4615,7 +4624,7 @@ var render = function () {
           "ul",
           {
             staticClass:
-              "list_icon flex items-center justify-between w-full px-5",
+              "list_arrow_icon flex items-center justify-between w-full px-5",
           },
           [
             _c(
@@ -4664,6 +4673,35 @@ var render = function () {
               ]
             ),
           ]
+        ),
+        _vm._v(" "),
+        _c(
+          "ul",
+          {
+            staticClass:
+              "list_bar_controls flex items-center justify-center gap-4",
+            on: {
+              mouseenter: function ($event) {
+                return _vm.stopAutoPlaySlider()
+              },
+              mouseleave: function ($event) {
+                return _vm.autoPlaySlider()
+              },
+            },
+          },
+          _vm._l(_vm.posts, function (post, index) {
+            return _c("li", {
+              key: index,
+              staticClass: "h-2 w-6 rounded-full cursor-pointer",
+              class: _vm.currentPost == index ? "bg-white" : "bg-color-gray-2",
+              on: {
+                click: function ($event) {
+                  return _vm.goToSlide(index)
+                },
+              },
+            })
+          }),
+          0
         ),
       ],
       2
@@ -20524,7 +20562,7 @@ module.exports = g;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/arrow_icon.svg?a66600a5315181ed91a2a062d3102441";
+module.exports = "/images/arrow_icon.svg?cc0261d318bdf5bdd33ba55412d6493d";
 
 /***/ }),
 
