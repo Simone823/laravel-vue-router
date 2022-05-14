@@ -113,7 +113,7 @@
                 <tr>
                     <td>{{$element->id}}</td>
                     <td>
-                        <span style="background-color: {{$element->color}}; font-size: 14px;" class="badge badge-pill py-2 px-3 my-2 text-dark">{{$element->name}}</span>
+                        <span style="font-size: 14px;" class="badge badge-pill py-2 px-3 my-2 text-white bg-primary">{{$element->name}}</span>
                     </td>
                     <td>{{$element->slug}}</td>
                     <td>{{$element->created_at}}</td>
@@ -169,7 +169,8 @@
                         <td>{{$element->category ? $element->category->name : 'null'}}</td>
                         <td>
                             @foreach ($element->tags as $tag)
-                                <span style="background-color: {{$tag->color}}; font-size: 14px;" class="badge badge-pill py-2 px-3 my-2 text-dark">{{$tag->name}}</span>
+                                <span style="font-size: 14px;" class="badge badge-pill py-2 px-3 my-2 text-white bg-primary">{{$tag->name}}</span>
+
                             @endforeach
                         </td>
                         <td>
