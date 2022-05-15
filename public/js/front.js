@@ -2010,8 +2010,48 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'LayoutDefault'
+  name: 'LayoutDefault',
+  data: function data() {
+    return {
+      // Hamburger menu open
+      hamburgerMenuOpen: false
+    };
+  },
+  methods: {
+    // Open and close hamburger menu
+    openCloseHamburgerMenu: function openCloseHamburgerMenu() {
+      this.hamburgerMenuOpen = !this.hamburgerMenuOpen;
+    }
+  }
 });
 
 /***/ }),
@@ -2723,7 +2763,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "header .router-link-exact-active[data-v-69ee9924] {\n  color: white;\n}", ""]);
+exports.push([module.i, "header .router-link-exact-active[data-v-69ee9924] {\n  color: white;\n}\n@media screen and (max-width: 768px) {\nheader .menu_wrapper[data-v-69ee9924] {\n    justify-content: space-between;\n    gap: 45px;\n    row-gap: 25px;\n}\nheader .menu_wrapper .nav-menu[data-v-69ee9924] {\n    display: none;\n}\nheader .menu_wrapper .hamburger_icon[data-v-69ee9924] {\n    display: block;\n}\nheader .nav-menu-768[data-v-69ee9924] {\n    display: block;\n}\n}", ""]);
 
 // exports
 
@@ -4333,80 +4373,188 @@ var render = function () {
         "header",
         {
           staticClass:
-            "py-4 px-8 bg-stone-900 shadow-sm shadow-white/30 w-full fixed z-50 flex items-center gap-x-48",
+            "py-4 px-8 bg-stone-900 shadow-sm shadow-white/30 w-full fixed z-50 flex gap-y-4 flex-col",
         },
         [
           _c(
-            "figure",
-            { staticClass: "logo_wrapper h-16 w-72" },
+            "div",
+            { staticClass: "menu_wrapper flex items-center gap-x-48" },
             [
-              _c("router-link", { attrs: { to: "/" } }, [
-                _c("img", {
-                  attrs: {
-                    src: __webpack_require__(/*! /public/img/boolpress_logo.svg */ "./public/img/boolpress_logo.svg"),
-                    alt: "",
+              _c(
+                "figure",
+                { staticClass: "logo_wrapper h-16 w-72" },
+                [
+                  _c("router-link", { attrs: { to: "/" } }, [
+                    _c("img", {
+                      attrs: {
+                        src: __webpack_require__(/*! /public/img/boolpress_logo.svg */ "./public/img/boolpress_logo.svg"),
+                        alt: "",
+                      },
+                    }),
+                  ]),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("nav", { staticClass: "nav-menu grow" }, [
+                _c(
+                  "ul",
+                  {
+                    staticClass:
+                      "flex items-center gap-8 uppercase tracking-widest font-semibold text-color-blue-3",
                   },
-                }),
+                  [
+                    _c(
+                      "li",
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "hover:text-white duration-500",
+                            attrs: { to: "/" },
+                          },
+                          [_vm._v("Homepage")]
+                        ),
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "hover:text-white duration-500",
+                            attrs: { to: "/posts" },
+                          },
+                          [_vm._v("Posts")]
+                        ),
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "hover:text-white duration-500",
+                            attrs: { to: "/categories" },
+                          },
+                          [_vm._v("Categories")]
+                        ),
+                      ],
+                      1
+                    ),
+                  ]
+                ),
               ]),
-            ],
-            1
+              _vm._v(" "),
+              _c("ul", { staticClass: "hamburger_icon hidden" }, [
+                _c(
+                  "li",
+                  {
+                    staticClass: "h-8 w-8",
+                    class: _vm.hamburgerMenuOpen == false ? "block" : "hidden",
+                    on: {
+                      click: function ($event) {
+                        return _vm.openCloseHamburgerMenu()
+                      },
+                    },
+                  },
+                  [
+                    _c("img", {
+                      attrs: {
+                        src: __webpack_require__(/*! /public/img/menu_icon.svg */ "./public/img/menu_icon.svg"),
+                        alt: "",
+                      },
+                    }),
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  {
+                    staticClass: "h-8 w-8",
+                    class: _vm.hamburgerMenuOpen == true ? "block" : "hidden",
+                    on: {
+                      click: function ($event) {
+                        return _vm.openCloseHamburgerMenu()
+                      },
+                    },
+                  },
+                  [
+                    _c("img", {
+                      attrs: {
+                        src: __webpack_require__(/*! /public/img/close_icon.svg */ "./public/img/close_icon.svg"),
+                        alt: "",
+                      },
+                    }),
+                  ]
+                ),
+              ]),
+            ]
           ),
           _vm._v(" "),
-          _c("nav", { staticClass: "nav-menu grow" }, [
-            _c(
-              "ul",
-              {
-                staticClass:
-                  "flex items-center gap-8 uppercase tracking-widest font-semibold text-color-blue-3",
-              },
-              [
+          _vm.hamburgerMenuOpen == true
+            ? _c("div", { staticClass: "nav-menu-768 w-full hidden" }, [
                 _c(
-                  "li",
+                  "ul",
+                  {
+                    staticClass:
+                      "uppercase tracking-widest font-semibold text-color-blue-3",
+                  },
                   [
                     _c(
-                      "router-link",
-                      {
-                        staticClass: "hover:text-white duration-500",
-                        attrs: { to: "/" },
-                      },
-                      [_vm._v("Homepage")]
+                      "li",
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "hover:text-white duration-500",
+                            attrs: { to: "/" },
+                          },
+                          [_vm._v("Homepage")]
+                        ),
+                      ],
+                      1
                     ),
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  [
+                    _vm._v(" "),
                     _c(
-                      "router-link",
-                      {
-                        staticClass: "hover:text-white duration-500",
-                        attrs: { to: "/posts" },
-                      },
-                      [_vm._v("Posts")]
+                      "li",
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "hover:text-white duration-500",
+                            attrs: { to: "/posts" },
+                          },
+                          [_vm._v("Posts")]
+                        ),
+                      ],
+                      1
                     ),
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  [
+                    _vm._v(" "),
                     _c(
-                      "router-link",
-                      {
-                        staticClass: "hover:text-white duration-500",
-                        attrs: { to: "/categories" },
-                      },
-                      [_vm._v("Categories")]
+                      "li",
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "hover:text-white duration-500",
+                            attrs: { to: "/categories" },
+                          },
+                          [_vm._v("Categories")]
+                        ),
+                      ],
+                      1
                     ),
-                  ],
-                  1
+                  ]
                 ),
-              ]
-            ),
-          ]),
+              ])
+            : _vm._e(),
         ]
       ),
       _vm._v(" "),
@@ -20631,6 +20779,28 @@ module.exports = "/images/arrow_icon.svg?cc0261d318bdf5bdd33ba55412d6493d";
 /***/ (function(module, exports) {
 
 module.exports = "/images/boolpress_logo.svg?8a28169ba56e45dd33d5e47062c39a12";
+
+/***/ }),
+
+/***/ "./public/img/close_icon.svg":
+/*!***********************************!*\
+  !*** ./public/img/close_icon.svg ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/close_icon.svg?90cc20d4e73d52fc09913a098aea4aa4";
+
+/***/ }),
+
+/***/ "./public/img/menu_icon.svg":
+/*!**********************************!*\
+  !*** ./public/img/menu_icon.svg ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/menu_icon.svg?e6e7820d13e3272e6445ab330e7811be";
 
 /***/ }),
 
