@@ -225,6 +225,9 @@ class PostController extends Controller
         // Elimino il post
         $post->delete();
 
+        // Elimino l'immagine dallo storage
+        Storage::delete($post->image);
+
         // Redirect route admin.posts.index
         return redirect()->route('admin.posts.index');
     }
