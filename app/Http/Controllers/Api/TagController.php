@@ -16,7 +16,7 @@ class TagController extends Controller
     public function index()
     {
         // Recupero i tags dal db
-        $tags = Tag::all();
+        $tags = Tag::orderBy('name', 'ASC')->get();
 
         // Return response json
         return response()->json([
