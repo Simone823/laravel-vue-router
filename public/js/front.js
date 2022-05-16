@@ -20779,7 +20779,7 @@ module.exports = "/images/arrow_icon.svg?cc0261d318bdf5bdd33ba55412d6493d";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/boolpress_logo.svg?8a28169ba56e45dd33d5e47062c39a12";
+module.exports = "/images/boolpress_logo.svg?504690b8b60d7cfc2e977427a42e8229";
 
 /***/ }),
 
