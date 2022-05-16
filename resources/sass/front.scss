@@ -10,3 +10,16 @@ img {
     height: 100% !important;
     display: block;
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgb(145, 145, 145);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #2FA4FF;
+
+    &:hover {
+        background-color: #0c7dd4;
+    }
+}
