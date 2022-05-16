@@ -48,7 +48,7 @@ class PostSeeder extends Seeder
             $user = User::inRandomOrder()->first();
             $posts->user_id = $user->id;
 
-            $posts->image = $faker->imageUrl('1920', '1080', true);
+            $posts->image = "https://picsum.photos/id/$i/3840/2160";
             $posts->publication_date = $faker->randomElement([null, $faker->date()]);
             $posts->save();
 
