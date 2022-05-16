@@ -2820,7 +2820,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".slider_wrapper[data-v-00e83377] {\n  height: 650px;\n  position: relative;\n}\n.slider_wrapper .img_wrapper_post[data-v-00e83377] {\n  height: 650px;\n}\n.slider_wrapper .img_wrapper_post img[data-v-00e83377] {\n  -webkit-animation: display-data-v-00e83377 600ms ease-out;\n}\n.slider_wrapper .img_wrapper_post .description[data-v-00e83377] {\n  position: absolute;\n  bottom: 100px;\n  left: 10%;\n}\n.slider_wrapper .list_arrow_icon[data-v-00e83377] {\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.slider_wrapper .list_arrow_icon li img[data-v-00e83377]:hover {\n  filter: invert(94%) sepia(100%) saturate(0%) hue-rotate(169deg) brightness(105%) contrast(101%);\n  transform: scale(1.15);\n  transition: all 300ms ease-in-out;\n}\n.slider_wrapper .list_bar_controls[data-v-00e83377] {\n  position: absolute;\n  bottom: 25px;\n  left: 50%;\n  transform: translateX(-50%);\n}\n@-webkit-keyframes display-data-v-00e83377 {\nfrom {\n    display: none;\n    opacity: 0;\n}\nto {\n    display: block;\n    opacity: 0.6;\n}\n}\n@keyframes display-data-v-00e83377 {\nfrom {\n    display: none;\n    opacity: 0;\n}\nto {\n    display: block;\n    opacity: 0.6;\n}\n}", ""]);
+exports.push([module.i, ".slider_wrapper[data-v-00e83377] {\n  height: 650px;\n  position: relative;\n}\n.slider_wrapper .img_wrapper_post[data-v-00e83377] {\n  height: 650px;\n}\n.slider_wrapper .img_wrapper_post img[data-v-00e83377] {\n  -webkit-animation: display-data-v-00e83377 600ms ease-out;\n}\n.slider_wrapper .img_wrapper_post .description[data-v-00e83377] {\n  position: absolute;\n  bottom: 100px;\n  left: 10%;\n  -webkit-animation: display-1-data-v-00e83377 600ms ease-out;\n}\n.slider_wrapper .list_arrow_icon[data-v-00e83377] {\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.slider_wrapper .list_arrow_icon li img[data-v-00e83377]:hover {\n  filter: invert(94%) sepia(100%) saturate(0%) hue-rotate(169deg) brightness(105%) contrast(101%);\n  transform: scale(1.15);\n  transition: all 300ms ease-in-out;\n}\n.slider_wrapper .list_bar_controls[data-v-00e83377] {\n  position: absolute;\n  bottom: 25px;\n  left: 50%;\n  transform: translateX(-50%);\n}\n@-webkit-keyframes display-data-v-00e83377 {\nfrom {\n    display: none;\n    opacity: 0;\n}\nto {\n    display: block;\n    opacity: 0.6;\n}\n}\n@keyframes display-data-v-00e83377 {\nfrom {\n    display: none;\n    opacity: 0;\n}\nto {\n    display: block;\n    opacity: 0.6;\n}\n}\n@-webkit-keyframes display-1-data-v-00e83377 {\nfrom {\n    display: none;\n    opacity: 0;\n}\nto {\n    display: block;\n    opacity: 1;\n}\n}\n@keyframes display-1-data-v-00e83377 {\nfrom {\n    display: none;\n    opacity: 0;\n}\nto {\n    display: block;\n    opacity: 1;\n}\n}", ""]);
 
 // exports
 
@@ -4803,6 +4803,7 @@ var render = function () {
                 {
                   staticClass:
                     "description text-white font-bold text-lg tracking-wider",
+                  class: _vm.currentPost == index ? "block" : "hidden",
                 },
                 [
                   _c("h2", { staticClass: "title mb-2" }, [

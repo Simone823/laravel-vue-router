@@ -12,7 +12,7 @@
                 <img :src="element.image" alt="" class="w-full object-cover opacity-60">
 
                 <!-- Description -->
-                <div class="description text-white font-bold text-lg tracking-wider">
+                <div class="description text-white font-bold text-lg tracking-wider" :class="currentPost == index ? 'block' : 'hidden' ">
                     <h2 class="title mb-2">{{element.title}}</h2>
                     <p v-if="element.category" class="category mb-2">{{`Categoria: ${element.category.name}`}}</p>
                     <p class="publication_date">{{`Pubblicato il ${element.publication_date}`}}</p>
@@ -145,6 +145,7 @@ import LayoutDefault from '../layouts/layout.vue';
             position: absolute;
             bottom: 100px;
             left: 10%;
+            -webkit-animation: display-1 600ms ease-out;
         }
     }
 
@@ -183,6 +184,18 @@ import LayoutDefault from '../layouts/layout.vue';
         to {
             display: block;
             opacity: 0.60;
+        }
+    }
+
+    @keyframes display-1 {
+        from {
+            display: none;
+            opacity: 0;
+        }
+
+        to {
+            display: block;
+            opacity: 1;
         }
     }
 }
