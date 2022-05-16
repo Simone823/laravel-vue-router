@@ -83,7 +83,7 @@ import LayoutDefault from '../layouts/layout.vue';
 
 .card_post {
     .img_wrapper_post {
-        height: 480px;
+        height: 720px;
     }
 }
 

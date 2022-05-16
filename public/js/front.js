@@ -2858,7 +2858,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".card_post .img_wrapper_post[data-v-c5080afe] {\n  height: 480px;\n}", ""]);
+exports.push([module.i, ".card_post .img_wrapper_post[data-v-c5080afe] {\n  height: 720px;\n}", ""]);
 
 // exports
 
