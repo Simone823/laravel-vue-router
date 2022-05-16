@@ -21571,35 +21571,35 @@ var routes = [{
   name: 'homepage',
   component: _pages_Homepage_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
   meta: {
-    title: 'BOOLPRESS | HOMEPAGE'
+    title: 'BOOLPRESSBLOG | HOMEPAGE'
   }
 }, {
   path: '/posts',
   name: 'posts.index',
   component: _pages_Posts_index_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
   meta: {
-    title: 'BOOLPRESS | POSTS'
+    title: 'BOOLPRESSBLOG | POSTS'
   }
 }, {
   path: '/posts/:slug',
   name: 'posts.show',
   component: _pages_Posts_show_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
   meta: {
-    title: 'BOOLPRESS | LETTURA POST'
+    title: 'BOOLPRESSBLOG | LETTURA POST'
   }
 }, {
   path: '/categories/:slug',
   name: 'categories.archive',
   component: _pages_Categories_archive_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
   meta: {
-    title: 'BOOLPRESS | CATEGORIA'
+    title: 'BOOLPRESSBLOG | CATEGORIA'
   }
 }, {
   path: '/tags/:slug',
   name: 'tags.archive',
   component: _pages_Tags_archive_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
   meta: {
-    title: 'BOOLPRESS | TAG'
+    title: 'BOOLPRESSBLOG | TAG'
   }
 }, {
   path: '/*',

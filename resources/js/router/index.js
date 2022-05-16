@@ -32,7 +32,7 @@ const routes = [
         name: 'homepage',
         component: Homepage,
         meta: {
-            title: 'BOOLPRESS | HOMEPAGE'
+            title: 'BOOLPRESSBLOG | HOMEPAGE'
         }
     },
 
@@ -41,7 +41,7 @@ const routes = [
         name: 'posts.index',
         component: PostsIndex,
         meta: {
-            title: 'BOOLPRESS | POSTS'
+            title: 'BOOLPRESSBLOG | POSTS'
         }
     },
 
@@ -50,7 +50,7 @@ const routes = [
         name: 'posts.show',
         component: PostsShow,
         meta: {
-            title: 'BOOLPRESS | LETTURA POST'
+            title: 'BOOLPRESSBLOG | LETTURA POST'
         }
     },
 
@@ -59,7 +59,7 @@ const routes = [
         name: 'categories.archive',
         component: CategoriesArchive,
         meta: {
-            title: 'BOOLPRESS | CATEGORIA'
+            title: 'BOOLPRESSBLOG | CATEGORIA'
         }
     },
 
@@ -68,7 +68,7 @@ const routes = [
         name: 'tags.archive',
         component: TagsArchive,
         meta: {
-            title: 'BOOLPRESS | TAG'
+            title: 'BOOLPRESSBLOG | TAG'
         }
     },
 
